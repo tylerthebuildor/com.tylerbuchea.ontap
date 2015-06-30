@@ -1,0 +1,104 @@
+<!-- Root -->
+<dom-module id="skeleton-template">
+<template>
+	<paper-header-panel>
+
+		<!-- Toolbar -->
+		<paper-toolbar on-click="{{onClick}}">
+		  <paper-icon-button icon="star" on-tap="menuAction"></paper-icon-button>
+		  <div class="title">Tyler On Tap</div>
+		  <div id="top-nav-right-links">
+		  	<!-- <paper-button raised="" primary="" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-button-0">Navigation</paper-button> -->
+		  </div>
+		</paper-toolbar>
+
+		<!-- Main Content -->
+		<div id="mainContainer">
+		<div>
+
+			<!-- Header -->
+			<section hero id="custom-header">
+				<h1 class="color-primary">Digital Pour</h1>
+				<h2>Website Design</h2>
+				<wait-list buttontext="Sign Up" class="x-mailer-light"></wait-list>
+			</section>
+
+			<!-- Product -->
+			<section id="custom-product">
+				<h3>What is Included?</h3>
+				<div class="grid-columns columns-2">
+					<ul>
+						<li><iron-icon icon="star"></iron-icon> Digital Pour Menu Integration</li>
+						<li><iron-icon icon="star"></iron-icon> Flate Rate</li>
+						<li><iron-icon icon="star"></iron-icon> 1-Week Turnover</li>
+						<li><iron-icon icon="star"></iron-icon> Fully Mobile Responsive Design</li>
+						<li><iron-icon icon="star"></iron-icon> Unique Design That Matches Your Brand</li>
+						<li><iron-icon icon="star"></iron-icon> Actionable Contact Buttons</li>
+					</ul>
+					<ul>
+						<li><iron-icon icon="star"></iron-icon> Mobile Friendly Navigation Button</li>
+						<li><iron-icon icon="star"></iron-icon> SEO Optimization</li>
+						<li><iron-icon icon="star"></iron-icon> Food Menu</li>
+						<li><iron-icon icon="star"></iron-icon> Instagram Integration</li>
+						<li><iron-icon icon="star"></iron-icon> Site Will Work Offline</li>
+						<li>
+						<iron-icon icon="star"></iron-icon> Add to Homescreen Compatible
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Instagram -->
+			<section id="custom-instagram" class="dark-row">
+				<h3>Instagram Integration</h3>
+				<!-- <x-instagram clientId="a842f4f9e2884d5598d3c5146eb98d11"></x-instagram> -->
+				<img src="../../images/beer-glasses.png" style="max-width:700px;width:100%;" alt="">
+			</section>
+
+			<!-- Tap List -->
+			<section id="custom-taplist">
+				<h3>Tap List - Example</h3>
+				<tap-list id="custom-taplist"></tap-list>
+			</section>
+
+			<!-- Sign Up -->
+			<section id="custom-signup" class="dark-row">
+				<sign-up></sign-up>
+				<paper-button>503 • 427 • 8672</paper-button>
+				<paper-button>Tyler@Buchea.com</paper-button>
+			</section>
+
+		</div>
+		</div>
+	</paper-header-panel>
+
+	<!-- <paper-toast id="caching-complete"
+               duration="6000"
+               text="Caching complete! This app will work offline.">
+  </paper-toast> -->
+
+  <platinum-sw-register auto-register
+                        clients-claim
+                        skip-waiting
+                        on-service-worker-installed="displayInstalledToast">
+    <platinum-sw-cache default-cache-strategy="networkFirst"
+                       precache-file="precache.json">
+    </platinum-sw-cache>
+  </platinum-sw-register>
+
+</template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'skeleton-template',
+			properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        }
+      }
+		});
+	})();
+</script>

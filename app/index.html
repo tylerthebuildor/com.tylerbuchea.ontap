@@ -1,0 +1,175 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Flate Rate Digital Pour customer website design with one week turn around. For tap and growler stations. Includes features such as Digital Pour menu integration, fully mobile resopnsive design, and SEO optimization.">
+  <meta name="keywords" content="Digital Pour, web design, tap list, digital pour integration, tap station, growler station, beer, wine, cider, mead">
+  <meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 month">
+	<meta name="language" content="english">
+	<meta name="web_author" content="Tyler Buchea">
+	<meta name="publisher" content="Tyler On Tap">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Polymer Starter Kit" />
+  <title>Tyler On Tap</title>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+  <!-- Chrome for Android theme color (color of search bar on chrome for latest android?) -->
+  <meta name="theme-color" content="#aad">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#aad">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Tyler On Tap">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#aad">
+  <meta name="apple-mobile-web-app-title" content="Tyler On Tap">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/_grids.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+
+	<!-- Browser Sync -->
+  <span id="browser-sync-binding"></span>
+
+  <!-- Skeleton Template -->
+	<template is="dom-bind" id="app">
+		<paper-header-panel>
+
+			<!-- Toolbar -->
+			<paper-toolbar on-click="{{onClick}}">
+			  <paper-icon-button icon="star" on-tap="menuAction"></paper-icon-button>
+			  <div class="title">Tyler On Tap</div>
+			  <div id="top-nav-right-links">
+			  	<!-- <paper-button raised="" primary="" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-button-0">Navigation</paper-button> -->
+			  </div>
+			</paper-toolbar>
+
+			<!-- Main Content -->
+			<div id="mainContainer">
+			<div>
+
+				<!-- Header -->
+				<section hero id="custom-header">
+
+					<!-- Title -->
+					<h1 class="color-primary">Digital Pour</h1>
+					<h2>Website Design</h2>
+
+					<!-- Wait List -->
+					<x-mailer buttontext="Sign Up" class="x-mailer-light"></x-mailer>
+
+				</section>
+
+				<!-- Product -->
+				<section id="custom-product">
+					<h3>What is Included?</h3>
+					<div class="grid-columns columns-2">
+						<paper-material elevation="1">
+						<ul>
+							<li><iron-icon icon="star"></iron-icon> Digital Pour Menu Integration</li>
+							<li><iron-icon icon="star"></iron-icon> Flate Rate</li>
+							<li><iron-icon icon="star"></iron-icon> 1-Week Turnover</li>
+							<li><iron-icon icon="star"></iron-icon> Fully Mobile Responsive Design</li>
+							<li><iron-icon icon="star"></iron-icon> Unique Design That Matches Your Brand</li>
+							<li><iron-icon icon="star"></iron-icon> Actionable Contact Buttons</li>
+						</ul>
+						</paper-material>
+						<paper-material elevation="1">
+						<ul>
+							<li><iron-icon icon="star"></iron-icon> Mobile Friendly Navigation Button</li>
+							<li><iron-icon icon="star"></iron-icon> SEO Optimization</li>
+							<li><iron-icon icon="star"></iron-icon> About Section</li>
+							<li><iron-icon icon="star"></iron-icon> SMS Taplist Updates</li>
+							<li><iron-icon icon="star"></iron-icon> Site Will Work Offline</li>
+							<li><iron-icon icon="star"></iron-icon> Add to Homescreen Compatible</li>
+						</ul>
+						</paper-material>
+					</div>
+				</section>
+
+				<!-- Instagram -->
+				<section id="custom-instagram" class="dark-row">
+					<h3>Your Pictures</h3>
+					<iron-image style="width:700px; height:400px; background-color: lightgray;"
+  				sizing="cover" preload fade src="images/people-drinking.jpg"></iron-image>
+				</section>
+
+				<!-- Tap List -->
+				<section id="custom-taplist">
+					<h3>Tap List - Example</h3>
+					<tap-list id="custom-taplist"></tap-list>
+				</section>
+
+				<!-- Sign Up -->
+				<section id="custom-signup" class="dark-row">
+					<sign-up></sign-up>
+					<a href="tel:5034278672">
+						<paper-button>503 • 427 • 8672</paper-button>
+					</a>
+					<a href="mailto:tyler@buchea.com" target="_blank">
+						<paper-button>Tyler@Buchea.com</paper-button>
+					</a>
+				</section>
+
+			</div>
+			</div>
+		</paper-header-panel>
+
+		<paper-toast id="caching-complete"
+	               duration="6000"
+	               text="Caching complete! This app will work offline.">
+	  </paper-toast>
+
+	  <platinum-sw-register auto-register
+	                        clients-claim
+	                        skip-waiting
+	                        on-service-worker-installed="displayInstalledToast">
+	    <platinum-sw-cache default-cache-strategy="networkFirst"
+	                       precache-file="precache.json">
+	    </platinum-sw-cache>
+	  </platinum-sw-register>
+
+	</template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>

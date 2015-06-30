@@ -1,0 +1,107 @@
+<dom-module id="x-mailer">
+	<style>
+	:host.x-mailer-light paper-input {
+	  --paper-input-container-color: #fff;
+	  --paper-input-container-focus-color: #fff;
+	  --paper-input-container-invalid-color: #fff;
+	  --paper-input-container-input-color: #fff;
+	}
+	.x-mailer paper-button {
+		background: var(--custom-extra-color-alt-light);
+		color: #fff;
+	}
+	.x-mailer paper-input {
+		max-width: 230px;
+		margin: auto;
+		text-align: left;
+	}
+	</style>
+	<template attributes="buttontext">
+
+		<!-- Send Mail -->
+		<iron-ajax
+	      id="send-email"
+	      url="../../mailer.php"
+	      handle-as="json"
+	      on-response="mailerResponse"
+	      debounce-duration="300">
+	  </iron-ajax>
+
+		<!-- Call to Action -->
+		<div class="x-mailer">
+
+			<form action="//formspree.io/tyler@buchea.com" method="POST">
+			  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
+				</paper-input>
+
+				<br>
+
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" on-click="sendEmail" type="submit">
+					<iron-icon icon="drafts" class=""></iron-icon>
+					<span>{{buttontext}}</span>
+				</paper-button>
+			</form>
+
+			<!-- Email Input -->
+			<!-- <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
+			</paper-input> -->
+
+			<!-- <br> -->
+
+			<!-- Submit Email -->
+			<!-- <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" on-click="sendEmail">
+				<iron-icon icon="drafts" class=""></iron-icon>
+				<span>{{buttontext}}</span>
+			</paper-button> -->
+
+		</div>
+
+		<!-- Notification -->
+		<paper-toast id="x-mailer-toast"
+                 duration="6000"
+                 text="Email Sent.">
+    </paper-toast>
+
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'x-mailer',
+			sendEmail: function() {
+				var inputVal = this.$['x-mailer-input'].value;
+				if(inputVal) {
+			    this.$['send-email'].params = {'emailAddress': inputVal};
+			    this.$['send-email'].generateRequest();
+				} else {
+					this.$['x-mailer-toast'].text = 'Please enter your email address first.';
+					this.$['x-mailer-toast'].show();
+				}
+			},
+			mailerResponse: function(e) {
+				//console.log(e.detail.response);
+	      //console.log(this.$['send-email'].lastResponse);
+	      console.log(e.detail.response);
+	      if(e.detail.response) {
+					this.$['x-mailer-toast'].text = 'Email sent.';
+	      } else {
+	      	this.$['x-mailer-toast'].text = 'There was an error. Please contact me directly.';
+	      }
+					this.$['x-mailer-input'].value = '';
+					this.$['x-mailer-toast'].show();
+			},
+			properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        },
+        emailInput: {
+        	type: String,
+        	value: '',
+        	notify: true
+        }
+      }
+		});
+	})();
+</script>

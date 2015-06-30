@@ -1,0 +1,189 @@
+<dom-module id="tap-list">
+	<style>
+	.tap-list {
+		text-align: left;
+		position: relative;
+	}
+	.tap-list li {
+		padding: 20px;
+		margin: 10px;
+		background: white;
+	}
+	@media (max-width: 600px) {
+	  .tap-list li {
+	    margin-left: 0;
+	    margin-right: 0;
+	  }
+	}
+	.tap-list li a {
+		text-decoration: none;
+		color: #aad !important;
+		font-weight: 100 !important;
+	}
+	.tap-list li a:hover {
+		text-decoration: underline;
+	}
+	.tap-list li a.producer_name {
+		font-weight: 900 !important;
+	}
+	.tap-list .brew-label {
+		display: block;
+		height: 100%;
+		max-width: 100px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 5px;
+		background: #ddd;
+		min-width: 100px;
+	}
+	.tap-list .brew-label img {
+		width: 100%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.tap-list .brew-info {
+		padding-right: 100px;
+	}
+	.tap-list paper-progress {
+		height: 10px;
+	}
+	.tap-list paper-progress {
+		width: 100%;
+	  max-width: 200px;
+	}
+	.tap-list paper-progress.progress-low {
+	  --paper-progress-active-color: #e74c3c;
+	  --paper-progress-secondary-color: #e74c3c;
+	}
+	.tap-list paper-progress.progress-med {
+	  --paper-progress-active-color: #f1c40f;
+	  --paper-progress-secondary-color: #f1c40f;
+	}
+	.tap-list paper-progress.progress-high {
+	  --paper-progress-active-color: #2ecc71;
+	  --paper-progress-secondary-color: #2ecc71;
+	}
+	</style>
+	<template>
+
+		<!-- Iron Ajax -->
+    <iron-ajax auto url="../../data-sample.json"
+        params='{"alt":"json", "q":"polymer"}'
+        handle-as="json" last-response="{{ajaxResponse}}"></iron-ajax>
+
+    <!-- Tap List -->
+    <ul class="tap-list grid-flex">
+
+    	<!-- Beverage -->
+	    <template is="dom-repeat" items="{{ajaxResponse}}">
+	    	<template is="dom-if" if="{{item.is_active}}">
+		      <li class="flex-item">
+
+						<!-- Brew Label -->
+		      	<template is="dom-if" if="{{item.image_url}}">
+			      	<paper-material elevation="1" class="brew-label">
+							  <img src="{{item.image_url}}">
+							</paper-material>
+		      	</template>
+
+						<!-- Brew Info -->
+		      	<div class="brew-info">
+
+		      		<p>
+
+								<!-- Item Name -->
+			      		<template is="dom-if" if="{{item.item_name}}">
+				      		<b>{{item.item_name}}</b>.
+			      		</template>
+
+			      		<!-- Producer Name -->
+			      		<template is="dom-if" if="{{item.producer_name}}">
+				      		<b>
+				      			<a href$="{{ concatBindings('http://', item.producer_url) }}" target="_blank" class="producer_name">{{item.producer_name}}</a>
+				      		</b>
+			      		</template>
+
+								<!-- Beverage Name -->
+			      		<template is="dom-if" if="{{item.beverage_name}}">
+				      		<b>{{item.beverage_name}}</b>
+			      		</template>
+
+								<!-- Producer Location -->
+			      		<template is="dom-if" if="{{item.producer_location}}">
+			      			<span> | </span>
+				      		<a href$="{{ concatBindings('https://www.google.com/maps/preview?authuser=0#!q=', item.producer_location) }}" target="_blank">{{item.producer_location}}</a>
+			      		</template>
+
+							</p>
+							<p>
+
+								<!-- Beverage Style and Color -->
+								<template is="dom-if" if="{{item.beverage_style}}">
+									<span>{{item.beverage_style}}</span>
+								</template>
+
+							</p>
+		      		<p>
+
+								<!-- Beverage Type -->
+		      			<template is="dom-if" if="{{item.beverage_type}}">
+			      			<span>{{item.beverage_type}}</span>
+		      			</template>
+
+								<!-- Beverage ABV -->
+		      			<template is="dom-if" if="{{item.beverage_abv}}">
+		      				<span> | </span>
+			      			<span>{{item.beverage_abv}}</span> ABV
+		      			</template>
+
+								<!-- Beverage IBU -->
+		      			<template is="dom-if" if="{{item.beverage_ibu}}">
+		      				<span> | </span>
+			      			<span>{{item.beverage_ibu}}</span> IBU
+		      			</template>
+
+							</p>
+							<p>
+
+								<!-- Percent Remaining -->
+		      			<paper-progress value="{{item.percent_remaining}}" class$="{{progressColor(item.percent_remaining)}}"></paper-progress>
+
+		      		</p>
+
+		      	</div>
+		      </li>
+	      </template>
+	    </template>
+    </ul>
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'tap-list',
+			properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        }
+      },
+			concatBindings: function(prefix, infix, suffix) {
+				return (prefix || '') + (infix || '') + (suffix || '');
+			},
+			progressColor: function(percentageLeft) {
+				if(percentageLeft < 30) {
+					return 'progress-low';
+				}
+				if(percentageLeft < 60) {
+					return 'progress-med';
+				}
+				if(percentageLeft <= 100) {
+					return 'progress-high';
+				}
+			}
+		});
+	})();
+</script>

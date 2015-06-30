@@ -1,0 +1,30 @@
+<dom-module id="wait-list">
+  <style>
+  .wait-list {
+	  max-width: 250px;
+	  margin: auto;
+	  padding: 0 10px;
+	}
+	.wait-list input {
+		color: white;
+	}
+  </style>
+  <template>
+
+    <div class="wait-list">
+
+			<p>Sign up for the waitlist</p>
+
+			<x-mailer buttontext="Sign Up" class="x-mailer-light"></x-mailer>
+
+		</div>
+
+  </template>
+</dom-module>
+<script>
+  (function() {
+    Polymer({
+      is: 'wait-list'
+    });
+  })();
+</script>
