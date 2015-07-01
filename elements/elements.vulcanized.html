@@ -15553,8 +15553,7 @@ paper-tabs {
 	<template attributes="buttontext">
 
 		
-		<iron-ajax id="send-email" url="//formspree.io/tyler@buchea.com" method="POST" handle-as="json" on-response="mailerResponse" debounce-duration="300">
-	  </iron-ajax>
+		
 
 		
 		<div class="x-mailer">
@@ -15567,7 +15566,7 @@ paper-tabs {
 				<br>
 
 				
-		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit">
 					<iron-icon icon="drafts" class=""></iron-icon>
 					<span>{{buttontext}}</span>
 				</paper-button>
@@ -15586,14 +15585,13 @@ paper-tabs {
 		Polymer({
 			is: 'x-mailer',
 			sendEmail: function() {
-				var inputVal = this.$['x-mailer-input'].value;
-				if(inputVal) {
+				if(this.emailInput) {
 					//this.$['send-email'].setAttribute('body', '{"email": "'+ inputVal +'" }');
 					//console.log(this.$['send-email']);
 					//console.log(this.$['send-email'].body);
 			    //this.$['send-email'].generateRequest();
 			    //this.$['x-mailer-form'].submit();
-			    this.$['x-mailer-hidden-input'].value = inputVal;
+			    this.$['x-mailer-hidden-input'].value = this.emailInput;
 			    this.$['x-mailer-form'].submit();
 				} else {
 					this.$['x-mailer-toast'].text = 'Please enter your email address first.';
