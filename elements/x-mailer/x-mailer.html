@@ -32,7 +32,8 @@
 		<div class="x-mailer">
 
 			<form id="x-mailer-form" action="//formspree.io/tyler@buchea.com" method="POST">
-			  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
+				<input type="hidden" id="x-mailer-hidden-input" name="_replyTo" value="{{emailInput}}">
+			  <paper-input placeholder="your-email@example.com" type="email" value="{{emailInput}}" label="Sign up for the waitlist" id="x-mailer-input">
 				</paper-input>
 
 				<br>
@@ -61,11 +62,13 @@
 			sendEmail: function() {
 				var inputVal = this.$['x-mailer-input'].value;
 				if(inputVal) {
-					this.$['send-email'].setAttribute('body', '{"email": "'+ inputVal +'" }');
-					console.log(this.$['send-email']);
+					//this.$['send-email'].setAttribute('body', '{"email": "'+ inputVal +'" }');
+					//console.log(this.$['send-email']);
 					//console.log(this.$['send-email'].body);
-			    this.$['send-email'].generateRequest();
+			    //this.$['send-email'].generateRequest();
 			    //this.$['x-mailer-form'].submit();
+			    this.$['x-mailer-hidden-input'].value = inputVal;
+			    this.$['x-mailer-form'].submit();
 				} else {
 					this.$['x-mailer-toast'].text = 'Please enter your email address first.';
 					this.$['x-mailer-toast'].show();
