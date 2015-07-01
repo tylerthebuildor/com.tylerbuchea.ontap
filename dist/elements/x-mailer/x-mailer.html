@@ -22,8 +22,8 @@
 		<iron-ajax
 	      id="send-email"
 	      url="//formspree.io/tyler@buchea.com"
-	      handle-as="json"
 	      method="POST"
+	      handle-as="json"
 	      on-response="mailerResponse"
 	      debounce-duration="300">
 	  </iron-ajax>
@@ -31,16 +31,18 @@
 		<!-- Call to Action -->
 		<div class="x-mailer">
 
-		  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
-			</paper-input>
+			<form id="x-mailer-form" action="//formspree.io/tyler@buchea.com" method="POST">
+			  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
+				</paper-input>
 
-			<br>
+				<br>
 
-			<!-- on-click="sendEmail" -->
-	    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
-				<iron-icon icon="drafts" class=""></iron-icon>
-				<span>{{buttontext}}</span>
-			</paper-button>
+				<!-- on-click="sendEmail" -->
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
+					<iron-icon icon="drafts" class=""></iron-icon>
+					<span>{{buttontext}}</span>
+				</paper-button>
+			</form>
 
 		</div>
 
@@ -59,9 +61,11 @@
 			sendEmail: function() {
 				var inputVal = this.$['x-mailer-input'].value;
 				if(inputVal) {
-					this.$['send-email'].body = '{"email": "'+ inputVal +'" }';
-					console.log(this.$['send-email'].body);
+					this.$['send-email'].setAttribute('body', '{"email": "'+ inputVal +'" }');
+					console.log(this.$['send-email']);
+					//console.log(this.$['send-email'].body);
 			    this.$['send-email'].generateRequest();
+			    //this.$['x-mailer-form'].submit();
 				} else {
 					this.$['x-mailer-toast'].text = 'Please enter your email address first.';
 					this.$['x-mailer-toast'].show();
