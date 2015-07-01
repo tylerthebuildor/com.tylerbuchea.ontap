@@ -24,7 +24,6 @@
 	      url="//formspree.io/tyler@buchea.com"
 	      handle-as="json"
 	      method="POST"
-	      body="{{emailInput}}"
 	      on-response="mailerResponse"
 	      debounce-duration="300">
 	  </iron-ajax>
@@ -33,6 +32,7 @@
 		<div class="x-mailer">
 
 			<form action="//formspree.io/tyler@buchea.com" method="POST" id="x-mailer-form">
+				<input type="hidden" name="email" id="x-mailer-hidden-input">
 			  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
 				</paper-input>
 
@@ -63,6 +63,7 @@
 				var inputVal = this.$['x-mailer-input'].value;
 				if(inputVal) {
 			    //this.$['send-email'].body = {'emailAddress': inputVal};
+			    this.$['x-mailer-hidden-input'].value = inputVal;
 			    this.$['x-mailer-form'].submit();
 			    //this.$['send-email'].generateRequest();
 				} else {
