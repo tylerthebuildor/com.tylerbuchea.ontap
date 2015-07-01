@@ -40200,10 +40200,6 @@ paper-tabs {
 
 </style>
 
-
-
-
-
 </head><body><div hidden="" by-vulcanize=""><dom-module id="iron-icon" assetpath="../bower_components/iron-icon/">
 
   <style>
@@ -45718,7 +45714,28 @@ iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {
   });
 
 </script>
-<dom-module id="wait-list" assetpath="wait-list/">
+<dom-module id="paper-submit" extends="paper-button" noscript="" assetpath="paper-submit/">
+  <template>
+    <style>
+      :host {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+      }
+    </style>
+    <paper-button>
+      <content></content>
+    </paper-button>
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'paper-submit'
+		});
+	})();
+</script><dom-module id="wait-list" assetpath="wait-list/">
   <style>
   .wait-list {
 	  max-width: 250px;
@@ -45768,7 +45785,7 @@ iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {
 	<template attributes="buttontext">
 
 		
-		<iron-ajax id="send-email" url="../../mailer.php" handle-as="json" on-response="mailerResponse" debounce-duration="300">
+		<iron-ajax id="send-email" url="//formspree.io/tyler@buchea.com" handle-as="json" method="POST" on-response="mailerResponse" debounce-duration="300">
 	  </iron-ajax>
 
 		
@@ -45780,19 +45797,12 @@ iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {
 
 				<br>
 
-		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" on-click="sendEmail" type="submit">
+				
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
 					<iron-icon icon="drafts" class=""></iron-icon>
 					<span>{{buttontext}}</span>
 				</paper-button>
 			</form>
-
-			
-			
-
-			
-
-			
-			
 
 		</div>
 
@@ -45819,21 +45829,18 @@ iron-selector:not(.narrow-layout) #main ::content [paper-drawer-toggle] {
 			mailerResponse: function(e) {
 				//console.log(e.detail.response);
 	      //console.log(this.$['send-email'].lastResponse);
-	      console.log(e.detail.response);
-	      if(e.detail.response) {
+	      //console.log(e.detail.response);
+	      console.log(e);
+	      /*if(e.detail.response) {
 					this.$['x-mailer-toast'].text = 'Email sent.';
 	      } else {
 	      	this.$['x-mailer-toast'].text = 'There was an error. Please contact me directly.';
-	      }
-					this.$['x-mailer-input'].value = '';
-					this.$['x-mailer-toast'].show();
+	      }*/
+      	this.$['x-mailer-toast'].text = 'Email sent.';
+				this.$['x-mailer-input'].value = '';
+				this.$['x-mailer-toast'].show();
 			},
 			properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        },
         emailInput: {
         	type: String,
         	value: '',
