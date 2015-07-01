@@ -21,8 +21,9 @@
 		<!-- Send Mail -->
 		<iron-ajax
 	      id="send-email"
-	      url="../../mailer.php"
+	      url="//formspree.io/tyler@buchea.com"
 	      handle-as="json"
+	      method="POST"
 	      on-response="mailerResponse"
 	      debounce-duration="300">
 	  </iron-ajax>
@@ -36,23 +37,12 @@
 
 				<br>
 
-		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" on-click="sendEmail" type="submit">
+				<!-- on-click="sendEmail" -->
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
 					<iron-icon icon="drafts" class=""></iron-icon>
 					<span>{{buttontext}}</span>
 				</paper-button>
 			</form>
-
-			<!-- Email Input -->
-			<!-- <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
-			</paper-input> -->
-
-			<!-- <br> -->
-
-			<!-- Submit Email -->
-			<!-- <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" on-click="sendEmail">
-				<iron-icon icon="drafts" class=""></iron-icon>
-				<span>{{buttontext}}</span>
-			</paper-button> -->
 
 		</div>
 
@@ -81,21 +71,18 @@
 			mailerResponse: function(e) {
 				//console.log(e.detail.response);
 	      //console.log(this.$['send-email'].lastResponse);
-	      console.log(e.detail.response);
-	      if(e.detail.response) {
+	      //console.log(e.detail.response);
+	      console.log(e);
+	      /*if(e.detail.response) {
 					this.$['x-mailer-toast'].text = 'Email sent.';
 	      } else {
 	      	this.$['x-mailer-toast'].text = 'There was an error. Please contact me directly.';
-	      }
-					this.$['x-mailer-input'].value = '';
-					this.$['x-mailer-toast'].show();
+	      }*/
+      	this.$['x-mailer-toast'].text = 'Email sent.';
+				this.$['x-mailer-input'].value = '';
+				this.$['x-mailer-toast'].show();
 			},
 			properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        },
         emailInput: {
         	type: String,
         	value: '',
