@@ -15559,19 +15559,16 @@ paper-tabs {
 		
 		<div class="x-mailer">
 
-			<form action="//formspree.io/tyler@buchea.com" method="POST" id="x-mailer-form">
-				<input type="hidden" name="email" id="x-mailer-hidden-input">
-			  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
-				</paper-input>
+		  <paper-input placeholder="your-email@example.com" type="email" value="" label="Sign up for the waitlist" id="x-mailer-input">
+			</paper-input>
 
-				<br>
+			<br>
 
-				
-		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
-					<iron-icon icon="drafts" class=""></iron-icon>
-					<span>{{buttontext}}</span>
-				</paper-button>
-			</form>
+			
+	    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendEmail">
+				<iron-icon icon="drafts" class=""></iron-icon>
+				<span>{{buttontext}}</span>
+			</paper-button>
 
 		</div>
 
@@ -15588,10 +15585,9 @@ paper-tabs {
 			sendEmail: function() {
 				var inputVal = this.$['x-mailer-input'].value;
 				if(inputVal) {
-			    //this.$['send-email'].body = {'emailAddress': inputVal};
-			    this.$['x-mailer-hidden-input'].value = inputVal;
-			    this.$['x-mailer-form'].submit();
-			    //this.$['send-email'].generateRequest();
+					this.$['send-email'].body = '{"email": "'+ inputVal +'" }';
+					console.log(this.$['send-email'].body);
+			    this.$['send-email'].generateRequest();
 				} else {
 					this.$['x-mailer-toast'].text = 'Please enter your email address first.';
 					this.$['x-mailer-toast'].show();
