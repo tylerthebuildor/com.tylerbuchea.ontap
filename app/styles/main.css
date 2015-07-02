@@ -15,6 +15,41 @@ paper-toolbar {
 	background: #262625 !important;
 }
 
+h3 {
+  /*font-family: 'Ledger', serif !important;
+  color: #333 !important;*/
+  text-shadow: 1px 1px 0px #444;
+  font-family: 'Ledger', serif !important;
+}
+
+#custom-product paper-material {
+	background: white;
+	padding-top: 10px;
+}
+
+section {
+	position: relative;
+}
+
+.small-picture {
+	width: 300px;
+}
+
+div.spacer {
+	padding: 40px;
+	width: 100%;
+	position: relative;
+}
+
+hr.hr-dark {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    width: 80%;
+    margin: 2em auto;
+}
+
 /* Icon and Text Sizing */
 .big {
 	font-size: 5rem !important;
@@ -49,7 +84,7 @@ paper-toolbar {
 
 
 @media (max-width: 600px) {
-	#custom-product ul {
+	#custom-product div paper-material {
 		margin-top: 20px;
 	}
 }

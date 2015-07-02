@@ -1,0 +1,49 @@
+<dom-module id="social-media">
+	<style>
+	:host {
+		width: 100%;
+	}
+	.social-media {
+	}
+	.social-media .social-icon {
+		padding: 15px;
+		width: 100px;
+		height: 100px;
+		transition: background 0.08s ease-in-out;
+		background: rgba(255,255,255,0.0)
+		margin: 5px;
+		border-radius: 3px;
+	}
+	.social-media .social-icon:hover {
+		background: rgba(255,255,255,1)
+	}
+	social-media a {
+		display: block;
+	}
+	</style>
+	<template attributes="facebook twitter instagram youtube">
+		<div class="social-media">
+			<a href="{{facebook}}" target="_blank">
+				<iron-icon src="../../images/social-fb.png" class="social-icon social-fb"></iron-icon>
+			</a>
+			<a href="{{instagram}}" target="_blank">
+				<iron-icon src="../../images/social-ig.png" class="social-icon social-ig"></iron-icon>
+			</a>
+			<a href="{{twitter}}" target="_blank">
+				<iron-icon src="../../images/social-tw.png" class="social-icon social-tw"></iron-icon>
+			</a>
+			<a href="{{youtube}}" target="_blank">
+				<iron-icon src="../../images/social-yt.png" class="social-icon social-yt"></iron-icon>
+			</a>
+		</div>
+
+			</a>
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'social-media'
+		});
+	})();
+</script>

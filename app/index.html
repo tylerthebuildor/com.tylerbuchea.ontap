@@ -51,6 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/_grids.css">
+  <link rel="stylesheet" href="bower_components/WOW/css/libs/animate.css">
   <!-- endbuild-->
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
@@ -92,15 +93,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					<h2>Website Design</h2>
 
 					<!-- Wait List -->
-					<x-mailer buttontext="Sign Up" class="x-mailer-light"></x-mailer>
+					<x-mailer category="waitlist"
+										labeltext="Sign up for the waitlist"
+										inputtext="your-email@example.com"
+										buttontext="Sign Up"
+										class="x-mailer-light">
+					</x-mailer>
 
 				</section>
 
 				<!-- Product -->
 				<section id="custom-product">
 					<h3>What is Included?</h3>
+					<hr class="hr-dark">
+
 					<div class="grid-columns columns-2">
 						<paper-material elevation="1">
+						<iron-icon icon="stars"></iron-icon>
 						<ul>
 							<li><iron-icon icon="star"></iron-icon> Digital Pour Menu Integration</li>
 							<li><iron-icon icon="star"></iron-icon> Flate Rate</li>
@@ -111,6 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						</ul>
 						</paper-material>
 						<paper-material elevation="1">
+						<iron-icon icon="stars"></iron-icon>
 						<ul>
 							<li><iron-icon icon="star"></iron-icon> Mobile Friendly Navigation Button</li>
 							<li><iron-icon icon="star"></iron-icon> SEO Optimization</li>
@@ -126,25 +136,70 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<!-- Instagram -->
 				<section id="custom-instagram">
 					<h3>Your Pictures</h3>
-					<iron-image style="width:700px; height:400px; background-color: lightgray;"
-  				sizing="cover" preload fade src="images/people-drinking.jpg"></iron-image>
+					<hr class="hr-dark">
+
+					<light-box>
+						<iron-image style="width:700px; height:400px; background-color: lightgray;"
+	  				sizing="cover" preload fade src="images/people-drinking.jpg"></iron-image>
+
+						<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  				sizing="cover" preload fade src="images/gallery-one.jpg"></iron-image>
+
+						<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  				sizing="cover" preload fade src="images/gallery-two.jpg"></iron-image>
+
+						<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  				sizing="cover" preload fade src="images/gallery-three.jpg"></iron-image>
+
+						<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  				sizing="cover" preload fade src="images/gallery-four.jpg"></iron-image>
+					</light-box>
+
+  				<div class="spacer">
+	  				<social-media facebook="https://www.facebook.com/tyler.buchea"
+	  											twitter="https://twitter.com/tylerbuchea"
+	  											instagram="https://instagram.com/tylerbuchea/"
+	  											youtube="https://www.youtube.com/channel/UCjGfHpKjVrp7MZ45hiwgD_A">
+	  				</social-media>
+  				</div>
+
 				</section>
 
 				<!-- Tap List -->
 				<section id="custom-taplist">
 					<h3>Tap List - Example</h3>
-					<tap-list id="custom-taplist"></tap-list>
+					<hr class="hr-dark">
+
+					<tap-list></tap-list>
 				</section>
 
 				<!-- Sign Up -->
 				<section id="custom-signup">
-					<sign-up></sign-up>
-					<a href="tel:5034278672">
-						<paper-button>503 • 427 • 8672</paper-button>
-					</a>
-					<a href="mailto:tyler@buchea.com" target="_blank">
-						<paper-button>Tyler@Buchea.com</paper-button>
-					</a>
+					<div class=""> <!-- grid-columns columns-2 -->
+
+						<div style="width:90%; max-width: 480px; margin:auto;">
+							<sign-up></sign-up>
+							<!-- <a href="tel:5034278672">
+								<paper-button>503 • 427 • 8672</paper-button>
+							</a>
+							<a href="mailto:tyler@buchea.com" target="_blank">
+								<paper-button>Tyler@Buchea.com</paper-button>
+							</a> -->
+						</div>
+
+						<!-- <div>
+							<sign-up></sign-up>
+							<paper-material elevation="1">
+								<paper-material elevation="2">
+									<h3>News Letter</h3>
+								</paper-material>
+								<p>
+									I give out great info and stuff
+								</p>
+							</paper-material>
+						</div> -->
+
+					</div>
 				</section>
 
 			</div>
@@ -166,6 +221,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  </platinum-sw-register>
 
 	</template>
+
+	<!-- Scripts -->
+	<script src="bower_components/WOW/dist/wow.min.js"></script>
 
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>

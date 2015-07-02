@@ -16,7 +16,7 @@
 		text-align: left;
 	}
 	</style>
-	<template attributes="buttontext">
+	<template attributes="category labeltext inputtext buttontext">
 
 		<!-- Send Mail -->
 		<!-- <iron-ajax
@@ -32,8 +32,9 @@
 		<div class="x-mailer">
 
 			<form id="x-mailer-form" action="//formspree.io/tyler@buchea.com" method="POST">
+				<input type="hidden" name="category" value="{{category}}">
 				<input type="hidden" id="x-mailer-hidden-input" name="_replyTo" value="{{emailInput}}">
-			  <paper-input placeholder="your-email@example.com" type="email" value="{{emailInput}}" label="Sign up for the waitlist" id="x-mailer-input">
+			  <paper-input placeholder="{{inputtext}}" type="email" value="{{emailInput}}" label="{{labeltext}}" id="x-mailer-input">
 				</paper-input>
 
 				<br>
