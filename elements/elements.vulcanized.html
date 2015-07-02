@@ -11741,8 +11741,8 @@ a:hover {
   --paper-toolbar-color: #ffffff;
 
   --custom-extra-color: #aad;
-	--custom-extra-color-alt: #3b8183;
-	--custom-extra-color-alt-light: #3b8183;
+	--custom-extra-color-alt: #262625;
+	--custom-extra-color-alt-light: #262625;
 }
 
 paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active,
@@ -15624,6 +15624,9 @@ paper-tabs {
 	})();
 </script><dom-module id="sign-up" assetpath="sign-up/">
 	<style>
+	:host {
+		width: 90%;
+	}
 	.sign-up {
 		display: block;
 		max-width: 700px;
@@ -15631,7 +15634,7 @@ paper-tabs {
 	}
 	.sign-up .header {
 		width: 100%;
-		background: #3b8183;
+		background: #aad;
 		color: #fff;
 		display: inline-block;
 		padding: 20px;
@@ -15649,12 +15652,13 @@ paper-tabs {
 		text-align: left;
 		max-width: 270px;
 		margin: auto;
+		padding-left: 14px;
 	}
 	.sign-up li iron-icon {
 		color: #aad;
 	}
 	.sign-up .info b {
-		color: #3b8183;
+		color: #aad;
 	}
 	.sign-up iron-icon {
 		display: inline-block !important;
@@ -15666,7 +15670,7 @@ paper-tabs {
 			<paper-material elevation="2" class="header">
 				<h4> <iron-icon icon="star" class="big"></iron-icon> Contact Me</h4>
 				<p>
-				Get a custom designed site that fits your brand for a flat rate. <br>
+				Get a custom designed site that fits your brand for a flat rate.
 				I offer a guaranteed one week turn around for your site.
 				</p>
 			</paper-material>
@@ -15755,6 +15759,9 @@ paper-tabs {
 	.tap-list paper-progress.progress-high {
 	  --paper-progress-active-color: #2ecc71;
 	  --paper-progress-secondary-color: #2ecc71;
+	}
+	.tap-list .flex-item {
+		border: 5px solid #ddd;
 	}
 	</style>
 	<template>
