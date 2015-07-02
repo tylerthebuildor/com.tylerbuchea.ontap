@@ -8,7 +8,7 @@
  * Compatible with Polymer 1.0
  */
 
-@import url("//fonts.googleapis.com/css?family=Dancing+Script:700|Ledger");
+@import url("//fonts.googleapis.com/css?family=Oxygen:700|Source+Sans+Pro");
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -19,9 +19,9 @@ html, body {
   margin: 0px;
   padding: 0px;
   min-height: 100%;
-  color: #594f4f;
-  background-color: #ececec;
-  font-family: 'Ledger', serif;
+  color: #444444;
+  background-color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
 
@@ -29,7 +29,7 @@ section {
   padding: 40px 0px;
 }
 section[hero] {
-  background-color: #e4e7e7;
+  background-color: #f2f7fa;
 }
 section:after {
   content: if false, 'one', 'two';
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h3, h5 {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Oxygen', sans-serif;
 }
 
 h1 {
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-  color: #594f4f;
+  color: #444444;
   font-size: 35px;
   margin: 20px 0px;
 }
@@ -67,70 +67,66 @@ h4 {
 }
 
 a, a:active, a:visited, a:focus {
-  color: #594f4f;
+  color: #444444;
   text-decoration: none;
 }
 
 a:hover {
-  color: #594f4f;
+  color: #444444;
   text-decoration: underline;
 }
 
 :root {
-  --default-primary-color: #424b4b;
-  --dark-primary-color: #424b4b;
+  --default-primary-color: #373b50;
+  --dark-primary-color: #373b50;
   --light-primary-color: #c5cae9;
   --text-primary-color: #ffffff;
   --accent-color: #ff4081;
   --primary-background-color: #ffffff;
-  --primary-text-color: #594f4f;
-  --secondary-text-color: #594f4f;
-  --disabled-text-color: #444848;
+  --primary-text-color: #444444;
+  --secondary-text-color: #444444;
+  --disabled-text-color: #313238;
   --divider-color: #e0e0e0;
-  --paper-checkbox-checked-color: #424b4b;
-  --paper-checkbox-checked-ink-color: #424b4b;
-  --paper-checkbox-unchecked-color: #594f4f;
-  --paper-checkbox-unchecked-ink-color: #594f4f;
-  --paper-checkbox-label-color: #594f4f;
-  --paper-fab-background: #424b4b;
-  --paper-fab-disabled-background: #c4c7c7;
-  --paper-fab-disabled-text: #444848;
-  --paper-icon-button-disabled-text: #c4c7c7;
-  --paper-input-container-color: #594f4f;
-  --paper-input-container-focus-color: #424b4b;
-  --paper-input-container-invalid-color: #e26f4b;
-  --paper-input-container-input-color: #594f4f;
-  --paper-menu-background-color: #e4e7e7;
-  --paper-menu-color: #594f4f;
-  --paper-menu-disabled-color: #c4c7c7;
-  --paper-progress-active-color: #424b4b;
-  --paper-progress-secondary-color: #3b8183;
-  --paper-radio-button-checked-color: #424b4b;
-  --paper-radio-button-checked-ink-color: #dde2e2;
-  --paper-radio-button-unchecked-color: #594f4f;
-  --paper-radio-button-unchecked-ink-color: #594f4f;
-  --paper-radio-button-label-color: #594f4f;
-  --paper-slider-knob-color: #424b4b;
-  --paper-slider-active-color: #424b4b;
-  --paper-slider-pin-color: #424b4b;
-  --paper-spinner-layer-1-color: #424b4b;
-  --paper-spinner-layer-2-color: #424b4b;
-  --paper-spinner-layer-3-color: #424b4b;
-  --paper-spinner-layer-4-color: #424b4b;
-  --paper-tabs-selection-bar-color: #c5cae9;
-  --paper-tab-ink: #c5cae9;
-  --paper-toggle-button-checked-bar-color: #424b4b;
-  --paper-toggle-button-checked-button-color: #424b4b;
-  --paper-toggle-button-checked-ink-color: #424b4b;
-  --paper-toggle-button-unchecked-bar-color: #594f4f;
+  --paper-checkbox-checked-color: #373b50;
+  --paper-checkbox-checked-ink-color: #373b50;
+  --paper-checkbox-unchecked-color: #444444;
+  --paper-checkbox-unchecked-ink-color: #444444;
+  --paper-checkbox-label-color: #444444;
+  --paper-fab-background: #373b50;
+  --paper-fab-disabled-background: #afb1b9;
+  --paper-fab-disabled-text: #313238;
+  --paper-icon-button-disabled-text: #afb1b9;
+  --paper-input-container-color: #919191;
+  --paper-input-container-focus-color: #373b50;
+  --paper-input-container-invalid-color: #ff6e40;
+  --paper-input-container-input-color: #919191;
+  --paper-menu-background-color: #f2f7fa;
+  --paper-menu-color: #444444;
+  --paper-menu-disabled-color: #afb1b9;
+  --paper-progress-active-color: #373b50;
+  --paper-progress-secondary-color: #90a4ae;
+  --paper-radio-button-checked-color: #373b50;
+  --paper-radio-button-checked-ink-color: #d6d8e3;
+  --paper-radio-button-unchecked-color: #444444;
+  --paper-radio-button-unchecked-ink-color: #444444;
+  --paper-radio-button-label-color: #444444;
+  --paper-slider-knob-color: #373b50;
+  --paper-slider-active-color: #373b50;
+  --paper-slider-pin-color: #373b50;
+  --paper-spinner-layer-1-color: #373b50;
+  --paper-spinner-layer-2-color: #373b50;
+  --paper-spinner-layer-3-color: #373b50;
+  --paper-spinner-layer-4-color: #373b50;
+  --paper-tabs-selection-bar-color: #90a4ae;
+  --paper-tab-ink: #90a4ae;
+  --paper-toggle-button-checked-bar-color: #373b50;
+  --paper-toggle-button-checked-button-color: #373b50;
+  --paper-toggle-button-checked-ink-color: #373b50;
+  --paper-toggle-button-unchecked-bar-color: #444444;
   --paper-toggle-button-unchecked-button-color: white;
   --paper-toggle-button-unchecked-ink-color: white;
-  --paper-toolbar-background: #aad; /* #424b4b */
+  --paper-toolbar-background: #373b50;
   --paper-toolbar-color: #ffffff;
-
-  --custom-extra-color: #aad;
-	--custom-extra-color-alt: #262625;
-	--custom-extra-color-alt-light: #262625;
 }
 
 paper-toolbar a, paper-toolbar a:hover, paper-toolbar a:active,
@@ -139,120 +135,120 @@ paper-toolbar a:visited, paper-toolbar a:focus {
 }
 
 paper-button.primary, paper-button.btn-primary, paper-button[primary] {
-  color: #424b4b;
+  color: #373b50;
 }
 paper-button.primary[raised], paper-button.btn-primary[raised],
 paper-button[primary][raised] {
-  background-color: #424b4b;
+  background-color: #373b50;
   color: #fff;
 }
 paper-button.secondary, paper-button.btn-secondary, paper-button[secondary] {
-  color: #3b8183;
+  color: #90a4ae;
 }
 paper-button.secondary[raised], paper-button.btn-secondary[raised],
 paper-button[secondary][raised] {
-  background-color: #3b8183;
-  color: #fff;
+  background-color: #90a4ae;
+  color: #2b3134;
 }
 paper-button.success, paper-button.btn-success, paper-button[success] {
-  color: #7cb342;
+  color: #9dc56e;
 }
 paper-button.success[raised], paper-button.btn-success[raised],
 paper-button[success][raised] {
-  background-color: #7cb342;
-  color: #fff;
+  background-color: #9dc56e;
+  color: #2f3b21;
 }
 paper-button.info, paper-button.btn-info, paper-button[info] {
-  color: #4db6ac;
+  color: #ffb74d;
 }
 paper-button.info[raised], paper-button.btn-info[raised],
 paper-button[info][raised] {
-  background-color: #4db6ac;
-  color: #fff;
+  background-color: #ffb74d;
+  color: #4d3717;
 }
 paper-button.warning, paper-button.btn-warning, paper-button[warning] {
-  color: #f2d65e;
+  color: #fadd60;
 }
 paper-button.warning[raised], paper-button.btn-warning[raised],
 paper-button[warning][raised] {
-  background-color: #f2d65e;
-  color: #49401c;
+  background-color: #fadd60;
+  color: #4b421d;
 }
 paper-button.error, paper-button.btn-error, paper-button[error] {
-  color: #e26f4b;
+  color: #ff6e40;
 }
 paper-button.error[raised], paper-button.btn-error[raised],
 paper-button[error][raised] {
-  background-color: #e26f4b;
-  color: #fff;
+  background-color: #ff6e40;
+  color: #4d2113;
 }
 paper-button.link, paper-button.btn-link, paper-button[link] {
   text-decoration: underline;
 }
 paper-button[raised] {
-  color: #594f4f;
+  color: #444444;
 }
 paper-button[disabled] {
-  color: #444848 !important;
-  background: #c4c7c7 !important;
+  color: #313238 !important;
+  background: #afb1b9 !important;
 }
 
 paper-icon-button.primary, paper-icon-button.btn-primary,
 paper-icon-button[primary] {
-  color: #424b4b;
+  color: #373b50;
 }
 paper-icon-button.primary:hover, paper-icon-button.btn-primary:hover,
 paper-icon-button[primary]:hover {
-  background-color: #dbdcdc;
-  background-color: rgba(66, 75, 75, 0.2);
+  background-color: #ebebee;
+  background-color: rgba(55, 59, 80, 0.2);
   border-radius: 50%;
 }
 paper-icon-button.secondary, paper-icon-button.btn-secondary,
 paper-icon-button[secondary] {
-  color: #3b8183;
+  color: #90a4ae;
 }
 paper-icon-button.secondary:hover, paper-icon-button.btn-secondary:hover,
 paper-icon-button[secondary]:hover {
-  background-color: #dae1e2;
-  background-color: rgba(59, 129, 131, 0.2);
+  background-color: #f4f6f7;
+  background-color: rgba(144, 164, 174, 0.2);
   border-radius: 50%;
 }
 paper-icon-button.success, paper-icon-button.btn-success,
 paper-icon-button[success] {
-  color: #7cb342;
+  color: #9dc56e;
 }
 paper-icon-button.success:hover, paper-icon-button.btn-success:hover,
 paper-icon-button[success]:hover {
-  background-color: #e1e6db;
-  background-color: rgba(124, 179, 66, 0.2);
+  background-color: #f5f9f1;
+  background-color: rgba(157, 197, 110, 0.2);
   border-radius: 50%;
 }
 paper-icon-button.info, paper-icon-button.btn-info, paper-icon-button[info] {
-  color: #4db6ac;
+  color: #ffb74d;
 }
 paper-icon-button.info:hover, paper-icon-button.btn-info:hover,
 paper-icon-button[info]:hover {
-  background-color: #dce7e6;
-  background-color: rgba(77, 182, 172, 0.2);
+  background-color: #fff8ed;
+  background-color: rgba(255, 183, 77, 0.2);
   border-radius: 50%;
 }
 paper-icon-button.warning, paper-icon-button.btn-warning,
 paper-icon-button[warning] {
-  color: #f2d65e;
+  color: #fadd60;
 }
 paper-icon-button.warning:hover, paper-icon-button.btn-warning:hover,
 paper-icon-button[warning]:hover {
-  background-color: #edeade;
-  background-color: rgba(242, 214, 94, 0.2);
+  background-color: #fffcef;
+  background-color: rgba(250, 221, 96, 0.2);
   border-radius: 50%;
 }
 paper-icon-button.error, paper-icon-button.btn-error, paper-icon-button[error] {
-  color: #e26f4b;
+  color: #ff6e40;
 }
 paper-icon-button.error:hover, paper-icon-button.btn-error:hover,
 paper-icon-button[error]:hover {
-  background-color: #ebe0dc;
-  background-color: rgba(226, 111, 75, 0.2);
+  background-color: #fff1ec;
+  background-color: rgba(255, 110, 64, 0.2);
   border-radius: 50%;
 }
 
@@ -262,9 +258,9 @@ paper-checkbox::shadow #checkmark.paper-checkbox {
 }
 
 paper-dialog {
-  color: #594f4f;
-  background-color: #ececec;
-  font-family: 'Ledger', serif;
+  color: #444444;
+  background-color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
 paper-dialog h1, paper-dialog h2, paper-dialog h3, paper-dialog h4,
@@ -279,51 +275,51 @@ paper-fab {
 }
 
 paper-fab {
-  background-color: #424b4b;
+  background-color: #373b50;
   color: #fff;
-  --paper-fab-keyboard-focus-background: #7f8e8e;
+  --paper-fab-keyboard-focus-background: #6c749a;
 }
 paper-fab.primary, paper-fab.btn-primary, paper-fab[primary] {
-  background-color: #424b4b;
+  background-color: #373b50;
   color: #fff;
-  --paper-fab-keyboard-focus-background: #7f8e8e;
+  --paper-fab-keyboard-focus-background: #6c749a;
 }
 paper-fab.secondary, paper-fab.btn-secondary, paper-fab[secondary] {
-  background-color: #3b8183;
-  color: #fff;
-  --paper-fab-keyboard-focus-background: #7ac1c3;
+  background-color: #90a4ae;
+  color: #2b3134;
+  --paper-fab-keyboard-focus-background: #50646e;
 }
 paper-fab.success, paper-fab.btn-success, paper-fab[success] {
-  background-color: #7cb342;
-  color: #fff;
-  --paper-fab-keyboard-focus-background: #3b5620;
+  background-color: #9dc56e;
+  color: #2f3b21;
+  --paper-fab-keyboard-focus-background: #5d8033;
 }
 paper-fab.info, paper-fab.btn-info, paper-fab[info] {
-  background-color: #4db6ac;
-  color: #fff;
-  --paper-fab-keyboard-focus-background: #265d58;
+  background-color: #ffb74d;
+  color: #4d3717;
+  --paper-fab-keyboard-focus-background: #cd7a00;
 }
 paper-fab.warning, paper-fab.btn-warning, paper-fab[warning] {
-  background-color: #f2d65e;
-  color: #49401c;
-  --paper-fab-keyboard-focus-background: #c19f10;
+  background-color: #fadd60;
+  color: #4b421d;
+  --paper-fab-keyboard-focus-background: #d4ad07;
 }
 paper-fab.error, paper-fab.btn-error, paper-fab[error] {
-  background-color: #e26f4b;
-  color: #fff;
-  --paper-fab-keyboard-focus-background: #953618;
+  background-color: #ff6e40;
+  color: #4d2113;
+  --paper-fab-keyboard-focus-background: #c02e00;
 }
 paper-fab[disabled] {
-  color: #444848 !important;
-  background: #c4c7c7 !important;
+  color: #313238 !important;
+  background: #afb1b9 !important;
 }
 
 section.hero paper-menu, section[hero] paper-menu {
-  --paper-menu-background-color: #e4e7e7;
+  --paper-menu-background-color: #f2f7fa;
 }
 
 paper-tabs {
-  background-color: #424b4b;
+  background-color: #373b50;
   color: #ffffff;
 }
 

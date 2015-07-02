@@ -11,6 +11,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   box-sizing: border-box;
 }
 
+paper-toolbar {
+	background: #262625 !important;
+}
+
 /* Icon and Text Sizing */
 .big {
 	font-size: 5rem !important;
@@ -64,12 +68,8 @@ section {
 }
 
 /* Row */
-.dark-row {
+section:nth-child(odd) {
 	background: #e4e7e7;
-}
-
-.dark-row h3 {
-	color: #4db6ac;
 }
 
 /* Hero Section */
