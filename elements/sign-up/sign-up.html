@@ -5,7 +5,6 @@
 	}
 	.sign-up {
 		display: block;
-		max-width: 700px;
 		margin: auto;
 	}
 	.sign-up .header {
@@ -58,7 +57,11 @@
 					<li><iron-icon icon="check" class="primary-color"></iron-icon> Site Works Offline</li>
 					<li><iron-icon icon="check" class="primary-color"></iron-icon> SEO Optimization</li>
 				</ul>
-				<x-mailer buttontext="Sign Up Now"></x-mailer>
+				<x-mailer category="waitlist"
+									labeltext="Sign up for the waitlist"
+									inputtext="your-email@example.com"
+									buttontext="Sign Up Now">
+				</x-mailer>
 			</paper-material>
 		</div>
   </template>

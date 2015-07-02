@@ -15532,6 +15532,46 @@ paper-tabs {
       is: 'wait-list'
     });
   })();
+</script><dom-module id="light-box" assetpath="light-box/">
+	<style>
+	:host {
+	}
+	.light-box {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+		height: 100%;
+		z-index: 12;
+		display: none;
+	}
+
+	</style>
+	<template>
+		<div style="width:50px;height:50px;background:red;" on-click="{{openImage}}">heh</div>
+		<content on-click="{{openImage}}"></content>
+		<div class="light-box" on-click="{{closeImage}}">
+			<div class="close" on-click="{{closeImage}}"></div>
+			<img src="" alt="">
+		</div>
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'light-box',
+			openImage: function(ev) {
+				// var largeImageURL = get iron-icon attr large-image
+				// change this.$['box-image'].src = largeImageURL;
+				console.log('hi');
+				console.log(ev);
+			},
+			closeImage: function() {
+				console.log('hi');
+			}
+		});
+	})();
 </script><dom-module id="x-mailer" assetpath="x-mailer/">
 	<style>
 	:host.x-mailer-light paper-input {
@@ -15550,7 +15590,7 @@ paper-tabs {
 		text-align: left;
 	}
 	</style>
-	<template attributes="buttontext">
+	<template attributes="category labeltext inputtext buttontext">
 
 		
 		
@@ -15559,8 +15599,9 @@ paper-tabs {
 		<div class="x-mailer">
 
 			<form id="x-mailer-form" action="//formspree.io/tyler@buchea.com" method="POST">
+				<input type="hidden" name="category" value="{{category}}">
 				<input type="hidden" id="x-mailer-hidden-input" name="_replyTo" value="{{emailInput}}">
-			  <paper-input placeholder="your-email@example.com" type="email" value="{{emailInput}}" label="Sign up for the waitlist" id="x-mailer-input">
+			  <paper-input placeholder="{{inputtext}}" type="email" value="{{emailInput}}" label="{{labeltext}}" id="x-mailer-input">
 				</paper-input>
 
 				<br>
@@ -15622,6 +15663,54 @@ paper-tabs {
       }
 		});
 	})();
+</script><dom-module id="social-media" assetpath="social-media/">
+	<style>
+	:host {
+		width: 100%;
+	}
+	.social-media {
+	}
+	.social-media .social-icon {
+		padding: 15px;
+		width: 100px;
+		height: 100px;
+		transition: background 0.08s ease-in-out;
+		background: rgba(255,255,255,0.0)
+		margin: 5px;
+		border-radius: 3px;
+	}
+	.social-media .social-icon:hover {
+		background: rgba(255,255,255,1)
+	}
+	social-media a {
+		display: block;
+	}
+	</style>
+	<template attributes="facebook twitter instagram youtube">
+		<div class="social-media">
+			<a href="{{facebook}}" target="_blank">
+				<iron-icon src="../images/social-fb.png" class="social-icon social-fb"></iron-icon>
+			</a>
+			<a href="{{instagram}}" target="_blank">
+				<iron-icon src="../images/social-ig.png" class="social-icon social-ig"></iron-icon>
+			</a>
+			<a href="{{twitter}}" target="_blank">
+				<iron-icon src="../images/social-tw.png" class="social-icon social-tw"></iron-icon>
+			</a>
+			<a href="{{youtube}}" target="_blank">
+				<iron-icon src="../images/social-yt.png" class="social-icon social-yt"></iron-icon>
+			</a>
+		</div>
+
+			
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'social-media'
+		});
+	})();
 </script><dom-module id="sign-up" assetpath="sign-up/">
 	<style>
 	:host {
@@ -15629,7 +15718,6 @@ paper-tabs {
 	}
 	.sign-up {
 		display: block;
-		max-width: 700px;
 		margin: auto;
 	}
 	.sign-up .header {
@@ -15682,7 +15770,8 @@ paper-tabs {
 					<li><iron-icon icon="check" class="primary-color"></iron-icon> Site Works Offline</li>
 					<li><iron-icon icon="check" class="primary-color"></iron-icon> SEO Optimization</li>
 				</ul>
-				<x-mailer buttontext="Sign Up Now"></x-mailer>
+				<x-mailer category="waitlist" labeltext="Sign up for the waitlist" inputtext="your-email@example.com" buttontext="Sign Up Now">
+				</x-mailer>
 			
 		</div>
   </paper-material></template>
