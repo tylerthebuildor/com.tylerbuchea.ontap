@@ -1,0 +1,35 @@
+<dom-module id="open-hours">
+	<style>
+	:host {
+
+	}
+	.open-hours {
+		margin-top: 20px;
+	}
+	</style>
+	<template attributes="">
+
+		<div class="open-hours">
+		Mon-Fri: 9am-5pm <br>
+		Sat-Sun: Closed
+		</div>
+
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'open-hours',
+			calculateStatus: function() {
+
+			},
+			properties: {
+        emailInput: {
+        	type: String,
+        	value: '',
+        	notify: true
+        }
+      }
+		});
+	})();
+</script>
