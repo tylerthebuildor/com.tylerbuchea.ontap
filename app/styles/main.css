@@ -7,28 +7,16 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+/**
+ * Globals
+ **/
+
 * {
   box-sizing: border-box;
 }
 
-paper-toolbar {
-	background: #262625 !important;
-}
-
-h3 {
-  /*font-family: 'Ledger', serif !important;
-  color: #333 !important;*/
-  text-shadow: 1px 1px 0px #444;
-  font-family: 'Ledger', serif !important;
-}
-
-#custom-product paper-material {
-	background: white;
-	padding-top: 10px;
-}
-
-section {
-	position: relative;
+a {
+	text-decoration: none;
 }
 
 .small-picture {
@@ -46,7 +34,7 @@ hr.hr-dark {
     height: 1px;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
-    width: 80%;
+    width: 200px;
     margin: 2em auto;
 }
 
@@ -59,11 +47,89 @@ hr.hr-dark {
 	font-size: 0.5rem;
 }
 
+.color-primary {
+	color: #aad;
+}
+
+/**
+ * Navbar
+ **/
+
+.navlinks {
+	display: none;
+}
+
+.navlinks a {
+	margin-right: 10px;
+}
+
+.nav-active {
+	color: #aad;
+	text-decoration: underline;
+	color: red !important;
+}
+
+@media (max-width: 600px) {
+	.navlinks {
+		display: none;
+	}
+}
+
+paper-toolbar {
+	background: #262625 !important;
+}
+
+/**
+ * Sections
+ **/
+section {
+	position: relative;
+	text-align: center;
+}
+
+section h3 {
+  /*font-family: 'Ledger', serif !important;
+  color: #333 !important;*/
+  text-shadow: 1px 1px 0px #444;
+  font-family: 'Ledger', serif !important;
+  color: #aad;
+}
+
+section:nth-child(odd) {
+	background: #e4e7e7;
+}
+
+/**
+ * Section Header
+ **/
 #custom-header {
 	height: 450px;
 }
 
-/* Font Colors */
+#custom-header {
+  background: linear-gradient(rgba(89, 79, 79, 0.45), rgba(89, 79, 79, 0.45)),
+  url('../images/tap-selection.jpg');
+	background-size: cover;
+	color: white;
+	text-shadow: 2px 2px 2px #000;
+}
+
+#custom-header h2 {
+	color: white;
+}
+
+#custom-header paper-input {
+	color: white !important;
+}
+
+/**
+ * Section Product
+ **/
+#custom-product paper-material {
+	background: white;
+	padding-top: 10px;
+}
+
 #custom-product li:nth-child(odd) iron-icon {
 	color: #aad !important;
 }
@@ -82,44 +148,24 @@ hr.hr-dark {
 	text-align: left;
 }
 
-
 @media (max-width: 600px) {
 	#custom-product div paper-material {
 		margin-top: 20px;
 	}
 }
 
-/* Html */
-h3 {
-	color: #aad;
-}
+/**
+ * Section Photo
+ **/
 
-section {
-	text-align: center;
-}
+/**
+ * Section Tap-List
+ **/
 
-.color-primary {
-	color: #aad;
-}
+/**
+ * Section Location
+ **/
 
-/* Row */
-section:nth-child(odd) {
-	background: #e4e7e7;
-}
-
-/* Hero Section */
-#custom-header {
-  background: linear-gradient(rgba(89, 79, 79, 0.45), rgba(89, 79, 79, 0.45)),
-  url('../images/tap-selection.jpg');
-	background-size: cover;
-	color: white;
-	text-shadow: 2px 2px 2px #000;
-}
-
-#custom-header h2 {
-	color: white;
-}
-
-#custom-header paper-input {
-	color: white !important;
-}
+/**
+ * Section Sign-Up
+ **/

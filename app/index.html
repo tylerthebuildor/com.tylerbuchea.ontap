@@ -51,6 +51,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/_grids.css">
+  <link rel="stylesheet" href="bower_components/featherlight/src/featherlight.css">
   <link rel="stylesheet" href="bower_components/WOW/css/libs/animate.css">
   <!-- endbuild-->
 
@@ -73,20 +74,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		<paper-header-panel>
 
 			<!-- Toolbar -->
-			<paper-toolbar on-click="{{onClick}}">
-			  <paper-icon-button src="images/touch/icon-128x128.png" on-tap="menuAction"></paper-icon-button>
+			<paper-toolbar>
+			  <paper-icon-button src="images/touch/icon-128x128.png"></paper-icon-button>
 			  <div class="title">Tyler On Tap</div>
-			  <div id="top-nav-right-links">
-			  	<!-- <paper-button raised="" primary="" role="button" tabindex="0" aria-disabled="false" class="x-scope paper-button-0">Navigation</paper-button> -->
+			  <div id="top-nav-right-links" class="navlinks">
+			  	<a href="#product" class="scroll">Product</a>
+			  	<a href="#photos" class="scroll">Photos</a>
+			  	<a href="#taplist" class="scroll">Tap List</a>
+			  	<a href="#location" class="scroll">Location</a>
+			  	<a href="#signup" class="scroll">Sign Up</a>
 			  </div>
 			</paper-toolbar>
 
 			<!-- Main Content -->
-			<div id="mainContainer">
-			<div>
+			<div id="mainContent">
 
 				<!-- Header -->
 				<section hero id="custom-header">
+					<a id="home"></a>
 
 					<!-- Title -->
 					<h1 class="color-primary">Digital Pour</h1>
@@ -107,6 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 				<!-- Product -->
 				<section id="custom-product">
+					<a id="product"></a>
 					<h3>What is Included?</h3>
 					<hr class="hr-dark">
 
@@ -136,27 +142,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					</div>
 				</section>
 
-				<!-- Instagram -->
-				<section id="custom-instagram">
-					<h3>Your Pictures</h3>
+				<!-- Photos -->
+				<section id="custom-photos">
+					<a id="photos"></a>
+					<h3>Your Photos</h3>
 					<hr class="hr-dark">
 
-					<light-box>
-						<iron-image style="width:700px; height:400px; background-color: lightgray;"
-	  				sizing="cover" preload fade src="images/people-drinking.jpg"></iron-image>
+					<div>
+						<a href="#" data-featherlight="images/people-drinking.jpg">
+							<iron-image style="width:700px; height:400px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/people-drinking.jpg"></iron-image>
+						</a>
 
-						<iron-image style="width:350px; height:200px; background-color: lightgray;"
-	  				sizing="cover" preload fade src="images/gallery-one.jpg"></iron-image>
+						<a href="#" data-featherlight="images/gallery-one.jpg">
+							<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/gallery-one.jpg"></iron-image>
+	  				</a>
 
-						<iron-image style="width:350px; height:200px; background-color: lightgray;"
-	  				sizing="cover" preload fade src="images/gallery-two.jpg"></iron-image>
+						<a href="#" data-featherlight="images/gallery-two.jpg">
+							<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/gallery-two.jpg"></iron-image>
+	  				</a>
 
-						<iron-image style="width:350px; height:200px; background-color: lightgray;"
-	  				sizing="cover" preload fade src="images/gallery-three.jpg"></iron-image>
+						<a href="#" data-featherlight="images/gallery-three.jpg">
+							<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/gallery-three.jpg"></iron-image>
+	  				</a>
 
-						<iron-image style="width:350px; height:200px; background-color: lightgray;"
-	  				sizing="cover" preload fade src="images/gallery-four.jpg"></iron-image>
-					</light-box>
+						<a href="#" data-featherlight="images/gallery-four.jpg">
+							<iron-image style="width:350px; height:200px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/gallery-four.jpg"></iron-image>
+	  				</a>
+					</div>
 
   				<div class="spacer">
 	  				<social-media facebook="https://www.facebook.com/tyler.buchea"
@@ -170,21 +187,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 				<!-- Tap List -->
 				<section id="custom-taplist">
+					<a id="taplist"></a>
 					<h3>Tap List - Example</h3>
 					<hr class="hr-dark">
 
 					<tap-list></tap-list>
 				</section>
 
-				<!-- Location Example -->
+				<!-- Location -->
 				<section id="custom-location">
-					<h3>Location Example</h3>
+					<a id="location"></a>
+					<h3>Location - Example</h3>
 					<hr class="hr-dark">
-					<location-location></location-location>
+					<location-location address="Portland+OR"></location-location>
 				</section>
 
 				<!-- Sign Up -->
 				<section id="custom-signup">
+					<a id="signup"></a>
 					<div class=""> <!-- grid-columns columns-2 -->
 
 						<div style="width:90%; max-width: 480px; margin:auto;">
@@ -212,15 +232,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					</div>
 				</section>
 
-			</div>
+
 			</div>
 		</paper-header-panel>
 
+		<!-- Notifications -->
 		<paper-toast id="caching-complete"
 	               duration="6000"
 	               text="Caching complete! This app will work offline.">
 	  </paper-toast>
 
+		<!-- Cache -->
 	  <platinum-sw-register auto-register
 	                        clients-claim
 	                        skip-waiting
@@ -241,13 +263,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 	  ga('create', 'UA-59245528-11', 'auto');
 	  ga('send', 'pageview');
-
 	</script>
-
-	<!-- WOW animations -->
-	<script src="bower_components/WOW/dist/wow.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
   <!-- build:js scripts/app.js -->
+	<script src="bower_components/WOW/dist/wow.min.js"></script>
+	<script src="bower_components/featherlight/src/featherlight.js"></script>
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

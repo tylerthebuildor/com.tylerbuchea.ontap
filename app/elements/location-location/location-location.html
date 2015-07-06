@@ -19,14 +19,16 @@
 		pointer-events: none;
 	}
 	</style>
-	<template attributes="">
+	<template attributes="address">
 
 		<div class="location-location">
 
 			<!-- Navigate Button -->
-			<paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary">
-				<iron-icon icon="forward" class=""></iron-icon> Navigate Here
-			</paper-button>
+			<a href$="{{ concatBindings('https://www.google.com/maps/place/', address) }}" target="_blank">
+				<paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary">
+					<iron-icon icon="maps:place" class=""></iron-icon> Navigate Here
+				</paper-button>
+			</a>
 
 			<br><br>
 
@@ -44,8 +46,8 @@
 	(function() {
 		Polymer({
 			is: 'location-location',
-			calculateStatus: function() {
-
+			concatBindings: function(prefix, infix, suffix) {
+				return (prefix || '') + (infix || '') + (suffix || '');
 			},
 			properties: {
         emailInput: {

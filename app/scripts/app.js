@@ -23,20 +23,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function() {
     console.log('Our app is ready to rock!');
+    //scrollify();
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
-    // imports are loaded and elements have been registered
-	 // new WOW().init();
+
   });
 
-  // Close drawer after menu item is selected if drawerPanel is narrow
-  /*app.onMenuSelect = function() {
-    var drawerPanel = document.querySelector('#paperDrawerPanel');
-    if (drawerPanel.narrow) {
-      drawerPanel.closeDrawer();
+  /*function scrollify() {
+  	var rootHeight = $('#mainContainer').height();
+  	var aArray = [];
+  	var aChildren = $('.scroll'); // find the a children of the list items
+
+    for (var i=0; i < aChildren.length; i++) {
+			var aChild = aChildren[i];
+			var ahref = $(aChild).attr('href');
+			aArray.push(ahref);
     }
-  };*/
+
+  	console.log(rootHeight);
+  	console.log(aArray);
+
+    $('#mainContainer').scroll(function() {
+	  	var rootPos = $('body').offset().top;
+	  	console.log(rootPos);
+    	for (var i=0; i < aArray.length; i++) {
+				var theID = aArray[i];
+				var divPos = $(theID).offset().top;
+				var divHeight = $(theID).height();
+				if (rootPos >= divPos && rootPos < (divPos + divHeight)) {
+					$('a[href="' + theID + '"]').addClass('nav-active');
+					console.log('ACTIVE');
+				} else {
+					$('a[href="' + theID + '"]').removeClass('nav-active');
+					console.log('NOT ACTIVE');
+				}
+			}
+    });
+
+  }*/
+
 
 })(document);
