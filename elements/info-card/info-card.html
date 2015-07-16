@@ -1,0 +1,67 @@
+<dom-module id="info-card">
+	<style>
+	:host {
+		width: 90%;
+		max-width: 450px;
+		margin: 20px;
+	}
+	.info-card {
+		display: block;
+		margin: auto;
+	}
+	.info-card ::content.header {
+		width: 100%;
+		background: #aad;
+		color: #fff;
+		display: inline-block;
+		padding: 10px;
+	}
+	.info-card ::content.info {
+		width: 100%;
+		background: #fff;
+		display: inline-block;
+		padding: 20px;
+	}
+	.info-card ::content.info h4 {
+		color: #aad;
+		margin: 5px;
+	}
+	.info-card ::content.info p {
+		text-align: left;
+	}
+	.info-card ::content.info ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: left;
+		max-width: 270px;
+		margin: auto;
+		padding-left: 14px;
+	}
+	.info-card ::content.info li iron-icon {
+		color: #aad;
+	}
+	.info-card ::content.info b {
+		color: #aad;
+	}
+	.info-card ::content.info iron-icon {
+		display: inline-block !important;
+		margin: 0 !important;
+	}
+	</style>
+	<template>
+		<paper-material elevation="1" class="info-card" horizontal center-justified layout>
+			<paper-material elevation="2" class="header">
+				<content select=".header"></content>
+			</paper-material>
+				<content select=".info"></content>
+			</paper-material>
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'info-card'
+		});
+	})();
+</script>
