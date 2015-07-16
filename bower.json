@@ -9,7 +9,8 @@
     "page": "visionmedia/page.js#~1.6.3",
     "iron-jsonp-library": "polymerelements/iron-jsonp-library#~1.0.2",
     "WOW": "~1.1.2",
-    "featherlight": "https://github.com/noelboss/featherlight.git#~1.3.2"
+    "featherlight": "https://github.com/noelboss/featherlight.git#~1.3.2",
+    "jquery": "~2.1.4"
   },
   "devDependencies": {
     "web-component-tester": "*",

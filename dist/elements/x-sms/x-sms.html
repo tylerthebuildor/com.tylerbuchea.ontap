@@ -1,0 +1,81 @@
+<dom-module id="x-sms">
+	<style>
+	:host.x-sms paper-input {
+	  --paper-input-container-color: #fff;
+	  --paper-input-container-focus-color: #fff;
+	  --paper-input-container-invalid-color: #fff;
+	  --paper-input-container-input-color: #fff;
+	}
+	.x-sms paper-input {
+		max-width: 230px;
+		margin: auto;
+		text-align: left;
+	}
+	.x-sms paper-button {
+		background: var(--custom-extra-color-alt-light);
+		color: #fff;
+	}
+	</style>
+	<template attributes="buttontext">
+
+		<!-- Send Text -->
+		<iron-ajax
+	      id="x-sms-ajax"
+	      url="http://sip.tylerbuchea.com/txt/"
+	      method="POST"
+	      body='{"clientId":"tylerbuchea", "responseSelection":"contactUsTxt"}'
+	      handle-as="json"
+	      on-response="ajaxResponse">
+	  </iron-ajax>
+
+		<!-- Call to Action -->
+		<div class="x-sms">
+
+			<form id="x-sms-form">
+			  <paper-input placeholder="{{inputtext}}" type="tel" value="{{numberInput}}" label="{{labeltext}}" id="x-sms-input">
+				</paper-input>
+
+				<br>
+
+				<!-- on-click="sendEmail" -->
+		    <paper-button raised="1" role="button" aria-disabled="false" class="btn-secondary" type="submit" on-click="sendSms">
+					<iron-icon icon="notification:sms" class=""></iron-icon>
+					<span>{{buttontext}}</span>
+				</paper-button>
+			</form>
+
+		</div>
+
+		<!-- Notification -->
+		<paper-toast id="x-sms-toast"
+                 duration="6000"
+                 text="Message Sent.">
+    </paper-toast>
+
+  </template>
+</dom-module>
+<script>
+	(function() {
+		Polymer({
+			is: 'x-sms',
+			sendSms: function() {
+				var ajaxCall = this.$['x-sms-ajax'];
+				ajaxCall.url = 'http://sip.tylerbuchea.com/txt/' + this.numberInput;
+				ajaxCall.body = 'clientId=tylerbuchea&responseSelection=contactUsTxt';
+				ajaxCall.generateRequest();
+			},
+			ajaxResponse: function(d) {
+				this.$['x-sms-input'].value = '';
+				this.$['x-sms-toast'].show();
+				console.log(d);
+			},
+			properties: {
+        numberInput: {
+        	type: String,
+        	value: '',
+        	notify: true
+        }
+      }
+		});
+	})();
+</script>

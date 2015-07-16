@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Flate Rate Digital Pour customer website design with one week turn around. For tap and growler stations. Includes features such as Digital Pour menu integration, fully mobile resopnsive design, and SEO optimization.">
+  <meta name="description" content="Digital Pour website design. For tap and growler stations. Includes features such as Digital Pour menu integration, fully mobile responsive design, and SEO optimization.">
   <meta name="keywords" content="Digital Pour, web design, tap list, digital pour integration, tap station, growler station, beer, wine, cider, mead">
   <meta name="robots" content="index, follow">
 	<meta name="revisit-after" content="1 month">
@@ -79,6 +79,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			  <div class="title">Tyler On Tap</div>
 			  <div id="top-nav-right-links" class="navlinks">
 			  	<a href="#product" class="scroll">Product</a>
+			  	<a href="#testimonial" class="scroll">Testimonial</a>
 			  	<a href="#photos" class="scroll">Photos</a>
 			  	<a href="#taplist" class="scroll">Tap List</a>
 			  	<a href="#location" class="scroll">Location</a>
@@ -125,7 +126,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 							<li><iron-icon icon="star"></iron-icon> 1-Week Turnover</li>
 							<li><iron-icon icon="star"></iron-icon> Fully Mobile Responsive Design</li>
 							<li><iron-icon icon="star"></iron-icon> Unique Design That Matches Your Brand</li>
-							<li><iron-icon icon="star"></iron-icon> Actionable Contact Buttons</li>
+							<li><iron-icon icon="star"></iron-icon> SMS Tap List Updates</li>
 						</ul>
 						</paper-material>
 						<paper-material elevation="1">
@@ -141,6 +142,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						</paper-material>
 					</div>
 				</section>
+
+				<!-- Testimonial -->
+				<!-- <section id="custom-testimonial">
+					<a id="testimonial"></a>
+					<h3>Testimonial</h3>
+					<hr class="hr-dark">
+
+					<div class="grid-columns columns-2">
+						<div>
+							<iron-image style="width:400px; height:600px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/screenshot-2.png"></iron-image>
+							<p>
+								Mark from Growler Tap Station was my first client and a real
+								pleasure to work with. Here is what he had to say about his
+								experience with me.
+							</p>
+						</div>
+						<div>
+							<iron-image style="width:400px; height:600px; background-color: lightgray;"
+	  					sizing="cover" preload fade src="images/screenshot-1.png"></iron-image>
+							<p>
+							Tyler makes the whole process simple from start to finish.
+							Our customers love the new design of our site as well as the
+							useful new functionality it offers.
+							</p>
+						</div>
+					</div>
+
+				</section> -->
 
 				<!-- Photos -->
 				<section id="custom-photos">
@@ -175,13 +205,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  				</a>
 					</div>
 
-  				<div class="spacer">
-	  				<social-media facebook="https://www.facebook.com/tyler.buchea"
-	  											twitter="https://twitter.com/tylerbuchea"
-	  											instagram="https://instagram.com/tylerbuchea/"
-	  											youtube="https://www.youtube.com/channel/UCjGfHpKjVrp7MZ45hiwgD_A">
-	  				</social-media>
-  				</div>
+  				<social-media facebook="https://www.facebook.com/tyler.buchea"
+  											twitter="https://twitter.com/tylerbuchea"
+  											instagram="https://instagram.com/tylerbuchea/"
+  											youtube="https://www.youtube.com/channel/UCjGfHpKjVrp7MZ45hiwgD_A">
+  				</social-media>
 
 				</section>
 
@@ -205,33 +233,81 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<!-- Sign Up -->
 				<section id="custom-signup">
 					<a id="signup"></a>
-					<div class=""> <!-- grid-columns columns-2 -->
+					<div class="grid-flex"> <!-- grid-columns columns-2 -->
 
-						<div style="width:90%; max-width: 480px; margin:auto;">
-							<sign-up></sign-up>
-							<!-- <a href="tel:5034278672">
-								<paper-button>503 • 427 • 8672</paper-button>
-							</a>
-							<a href="mailto:tyler@buchea.com" target="_blank">
-								<paper-button>Tyler@Buchea.com</paper-button>
-							</a> -->
-						</div>
-
-						<!-- <div>
-							<sign-up></sign-up>
-							<paper-material elevation="1">
-								<paper-material elevation="2">
-									<h3>News Letter</h3>
-								</paper-material>
+						<info-card class="grid-item">
+							<div class="header">
+								<h4> <iron-icon icon="maps:local-phone" class="big"></iron-icon> SMS Updates</h4>
 								<p>
-									I give out great info and stuff
+								Try out an example of the SMS Tap List Updates.
 								</p>
-							</paper-material>
-						</div> -->
+							</div>
+
+							<!-- info -->
+							<div class="info">
+								<b>What is this?</b><br>
+								<p>
+									Every one of my clients will get a form much like the one below
+									where your customers can enter their phone number and get weekly
+									updates of any new beverages you have put on tap.
+								</p>
+								<p>
+									Your customers will love it. Especially those regulars that like
+									to stay up to date. I use text messages for the updates because
+									any phone can receive them whether they have a smartphone or not.
+								</p>
+								<h4>
+									Enter your number and I'll send you an example of
+									an update one of your customers would receive.
+								</h4>
+								<x-sms
+									buttontext="Get Updates!"
+									inputtext="(503) 123-1234"
+									labeltext="Enter your phone number">
+								</x-sms>
+							</div>
+						</info-card>
+
+						<info-card class="grid-item">
+							<div class="header">
+								<h4> <iron-icon icon="star" class="big"></iron-icon> Contact Me</h4>
+								<p>
+								Get a custom designed site that fits your brand for a flat rate.
+								I offer a guaranteed one week turn around for your site.
+								</p>
+							</div>
+
+							<!-- info -->
+							<div class="info">
+								<b>Some Included Features</b>
+								<p>
+								<ul>
+									<li><iron-icon icon="check" class="primary-color"></iron-icon> Fully Mobile Responsive Site</li>
+									<li><iron-icon icon="check" class="primary-color"></iron-icon> Digital Pour Tap List Integration</li>
+									<li><iron-icon icon="check" class="primary-color"></iron-icon> Offline Functionality</li>
+									<li><iron-icon icon="check" class="primary-color"></iron-icon> SEO Optimization</li>
+								</ul>
+								</p>
+								<x-mailer category="waitlist"
+													labeltext="Sign up for the waitlist"
+													inputtext="your-email@example.com"
+													buttontext="Sign Up Now">
+								</x-mailer>
+
+								<br>
+
+								<a href="tel:5034278672">
+									<paper-button>503 • 427 • 8672</paper-button>
+								</a>
+								<a href="mailto:tyler@buchea.com" target="_blank">
+									<paper-button>Tyler@Buchea.com</paper-button>
+								</a>
+
+							</div>
+						</info-card>
 
 					</div>
 				</section>
-
 
 			</div>
 		</paper-header-panel>
@@ -264,11 +340,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  ga('create', 'UA-59245528-11', 'auto');
 	  ga('send', 'pageview');
 	</script>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
-  <!-- build:js scripts/app.js -->
+  <!-- build:js scripts/vendor.js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/WOW/dist/wow.min.js"></script>
 	<script src="bower_components/featherlight/src/featherlight.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
   <!-- endbuild-->
 </body>

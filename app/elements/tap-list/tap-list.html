@@ -72,6 +72,7 @@
 	<template>
 
 		<!-- Iron Ajax --> <!-- ../../data-sample.json -->
+		<!-- http://ontap.tylerbuchea.com/data-sample.json -->
     <iron-ajax auto url="http://ontap.tylerbuchea.com/data-sample.json"
         params='{"alt":"json", "q":"polymer"}'
         handle-as="json" last-response="{{ajaxResponse}}"></iron-ajax>
@@ -152,6 +153,20 @@
 
 								<!-- Percent Remaining -->
 		      			<paper-progress value="{{item.percent_remaining}}" class$="{{progressColor(item.percent_remaining)}}"></paper-progress>
+
+		      			<br>
+
+		      			<template is="dom-if" if="{{item.ratebeer_url}}">
+		      				<a href="{{item.ratebeer_url}}" target="_blank">Rate Beer</a> •
+		      			</template>
+
+		      			<template is="dom-if" if="{{item.beeradvocate_url}}">
+		      				<a href="{{item.beeradvocate_url}}" target="_blank">Beer Advocate</a> •
+		      			</template>
+
+		      			<template is="dom-if" if="{{item.untappd_url}}">
+		      				<a href="{{item.untappd_url}}" target="_blank">Untappd</a>
+		      			</template>
 
 		      		</p>
 
