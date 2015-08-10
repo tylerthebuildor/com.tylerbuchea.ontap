@@ -15,6 +15,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   box-sizing: border-box;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto', sans-serif !important;
+  font-family: 'PT Serif', serif !important;
+}
+
 a {
 	text-decoration: none;
 }
@@ -32,10 +39,15 @@ div.spacer {
 hr.hr-dark {
     border: 0;
     height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    background: #999;
+    background-image: linear-gradient(to right, #ccc, red, #ccc);
     width: 200px;
     margin: 2em auto;
+    display: none;
+}
+
+iron-icon {
+	margin-bottom: 5px;
 }
 
 /* Icon and Text Sizing */
@@ -94,9 +106,20 @@ section {
 section h3 {
   /*font-family: 'Ledger', serif !important;
   color: #333 !important;*/
-  text-shadow: 1px 1px 0px #444;
   font-family: 'Ledger', serif !important;
+  font-family: sans-serif !important;
   color: #aad;
+  font-size: 3rem !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-family: 'PT Serif', serif !important;
+  color: #666;
+  margin-bottom: 20px !important;
+  /*max-width: 700px !important;
+  text-align: left;
+  padding-left: 20px !important;
+  margin: auto;
+  margin-left: 20px;
+  margin-bottom: 20px !important;*/
 }
 
 section:nth-child(odd) {
@@ -107,7 +130,6 @@ section:nth-child(odd) {
  * Section Header
  **/
 #custom-header {
-	height: 450px;
 }
 
 #custom-header {
@@ -118,8 +140,16 @@ section:nth-child(odd) {
 	text-shadow: 2px 2px 2px #000;
 }
 
+#custom-header h1 {
+	font-size: 4rem;
+}
+
 #custom-header h2 {
 	color: white;
+	font-size: 3rem;
+	text-shadow: none;
+  font-family: 'Roboto', sans-serif !important;
+  font-family: 'PT Serif', serif !important;
 }
 
 #custom-header paper-input {
